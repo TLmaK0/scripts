@@ -26,5 +26,5 @@ tar -xaf "${CACHED_DOWNLOAD}" --strip-components=1 --directory "${MONGODB_DIR}"
 
 echo "starting.........."
 # Make sure to use the exact parameters you want for MongoDB and give it enough sleep time to properly start up
-bash -c "LC_ALL=C ${MONGODB_DIR}/bin/mongod --port ${MONGODB_PORT} --dbpath ${MONGODB_DIR} --storageEngine ${MONGODB_STORAGE_ENGINE} 2>&1 >/dev/null" & disown
+bash -c "LC_ALL=C ${MONGODB_DIR}/bin/mongod --port ${MONGODB_PORT} --dbpath ${MONGODB_DIR} --storageEngine ${MONGODB_STORAGE_ENGINE}" & disown
 sleep "${MONGODB_WAIT_TIME}"
